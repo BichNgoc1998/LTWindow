@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QLNHANVIEN.DAL
 {
@@ -59,13 +60,15 @@ namespace QLNHANVIEN.DAL
         {
             SqlConnection conn = CreateConnection();
             conn.Open();
-            SqlCommand cmd = new SqlCommand("insert into chamcong values (@manv, @tennv, @id_matt,@ngay)", conn);
+            SqlCommand cmd = new SqlCommand("insert into chamcong (manv, tennv, id_matt, ngay) values (@manv, @tennv, @id_matt, @ngay)", conn);
             cmd.Parameters.Add(new SqlParameter("@manv", time.Manv));
             cmd.Parameters.Add(new SqlParameter("@tennv", time.Tennv));
             cmd.Parameters.Add(new SqlParameter("@id_matt", time.Tinhtrang.Matt));
             cmd.Parameters.Add(new SqlParameter("@ngay", time.Ngay));
             cmd.ExecuteNonQuery();
             conn.Close();
+
+            MessageBox.Show("Thêm mới thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

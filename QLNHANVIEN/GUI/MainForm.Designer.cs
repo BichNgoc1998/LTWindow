@@ -29,7 +29,13 @@ namespace QLNHANVIEN.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.gbNhanvien = new System.Windows.Forms.GroupBox();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.lbTim = new System.Windows.Forms.Label();
+            this.cboSapXep = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btExport = new System.Windows.Forms.Button();
             this.btExit_1 = new System.Windows.Forms.Button();
             this.btDelete = new System.Windows.Forms.Button();
             this.btEdit = new System.Windows.Forms.Button();
@@ -80,6 +86,11 @@ namespace QLNHANVIEN.GUI
             // 
             // gbNhanvien
             // 
+            this.gbNhanvien.Controls.Add(this.tbSearch);
+            this.gbNhanvien.Controls.Add(this.lbTim);
+            this.gbNhanvien.Controls.Add(this.cboSapXep);
+            this.gbNhanvien.Controls.Add(this.label13);
+            this.gbNhanvien.Controls.Add(this.btExport);
             this.gbNhanvien.Controls.Add(this.btExit_1);
             this.gbNhanvien.Controls.Add(this.btDelete);
             this.gbNhanvien.Controls.Add(this.btEdit);
@@ -110,48 +121,110 @@ namespace QLNHANVIEN.GUI
             this.gbNhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbNhanvien.Location = new System.Drawing.Point(34, 23);
             this.gbNhanvien.Name = "gbNhanvien";
-            this.gbNhanvien.Size = new System.Drawing.Size(524, 372);
+            this.gbNhanvien.Size = new System.Drawing.Size(524, 384);
             this.gbNhanvien.TabIndex = 2;
             this.gbNhanvien.TabStop = false;
             this.gbNhanvien.Text = "THÔNG TIN NHÂN VIÊN";
+            this.gbNhanvien.Enter += new System.EventHandler(this.gbNhanvien_Enter);
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Location = new System.Drawing.Point(370, 275);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(118, 20);
+            this.tbSearch.TabIndex = 33;
+            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
+            // 
+            // lbTim
+            // 
+            this.lbTim.AutoSize = true;
+            this.lbTim.Location = new System.Drawing.Point(318, 280);
+            this.lbTim.Name = "lbTim";
+            this.lbTim.Size = new System.Drawing.Size(49, 13);
+            this.lbTim.TabIndex = 32;
+            this.lbTim.Text = "Tìm kiếm";
+            // 
+            // cboSapXep
+            // 
+            this.cboSapXep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSapXep.FormattingEnabled = true;
+            this.cboSapXep.Location = new System.Drawing.Point(370, 218);
+            this.cboSapXep.Name = "cboSapXep";
+            this.cboSapXep.Size = new System.Drawing.Size(121, 21);
+            this.cboSapXep.TabIndex = 31;
+            this.cboSapXep.SelectedIndexChanged += new System.EventHandler(this.cboSapXep_SelectedIndexChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(318, 223);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(46, 13);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Sắp xếp";
+            // 
+            // btExport
+            // 
+            this.btExport.Image = ((System.Drawing.Image)(resources.GetObject("btExport.Image")));
+            this.btExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btExport.Location = new System.Drawing.Point(452, 343);
+            this.btExport.Name = "btExport";
+            this.btExport.Size = new System.Drawing.Size(66, 35);
+            this.btExport.TabIndex = 28;
+            this.btExport.Text = "Excel";
+            this.btExport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btExport.UseVisualStyleBackColor = true;
+            this.btExport.Click += new System.EventHandler(this.btExport_Click);
             // 
             // btExit_1
             // 
-            this.btExit_1.Location = new System.Drawing.Point(425, 343);
+            this.btExit_1.Image = ((System.Drawing.Image)(resources.GetObject("btExit_1.Image")));
+            this.btExit_1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btExit_1.Location = new System.Drawing.Point(357, 343);
             this.btExit_1.Name = "btExit_1";
-            this.btExit_1.Size = new System.Drawing.Size(75, 23);
+            this.btExit_1.Size = new System.Drawing.Size(75, 35);
             this.btExit_1.TabIndex = 27;
             this.btExit_1.Text = "Thoát";
+            this.btExit_1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btExit_1.UseVisualStyleBackColor = true;
             this.btExit_1.Click += new System.EventHandler(this.btExit_1_Click);
             // 
             // btDelete
             // 
-            this.btDelete.Location = new System.Drawing.Point(311, 343);
+            this.btDelete.Image = ((System.Drawing.Image)(resources.GetObject("btDelete.Image")));
+            this.btDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btDelete.Location = new System.Drawing.Point(271, 343);
             this.btDelete.Name = "btDelete";
-            this.btDelete.Size = new System.Drawing.Size(75, 23);
+            this.btDelete.Size = new System.Drawing.Size(63, 35);
             this.btDelete.TabIndex = 26;
             this.btDelete.Text = "Xóa";
+            this.btDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btDelete.UseVisualStyleBackColor = true;
             this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // btEdit
             // 
-            this.btEdit.Location = new System.Drawing.Point(203, 343);
+            this.btEdit.Image = ((System.Drawing.Image)(resources.GetObject("btEdit.Image")));
+            this.btEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btEdit.Location = new System.Drawing.Point(187, 343);
             this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(75, 23);
+            this.btEdit.Size = new System.Drawing.Size(65, 35);
             this.btEdit.TabIndex = 25;
             this.btEdit.Text = "Sửa";
+            this.btEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btEdit.UseVisualStyleBackColor = true;
             this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // btNew
             // 
-            this.btNew.Location = new System.Drawing.Point(98, 343);
+            this.btNew.Image = ((System.Drawing.Image)(resources.GetObject("btNew.Image")));
+            this.btNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btNew.Location = new System.Drawing.Point(100, 343);
             this.btNew.Name = "btNew";
-            this.btNew.Size = new System.Drawing.Size(75, 23);
+            this.btNew.Size = new System.Drawing.Size(70, 35);
             this.btNew.TabIndex = 24;
             this.btNew.Text = "Thêm";
+            this.btNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btNew.UseVisualStyleBackColor = true;
             this.btNew.Click += new System.EventHandler(this.btNew_Click);
             // 
@@ -167,6 +240,7 @@ namespace QLNHANVIEN.GUI
             // 
             // cbPhong
             // 
+            this.cbPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPhong.FormattingEnabled = true;
             this.cbPhong.Location = new System.Drawing.Point(98, 302);
             this.cbPhong.Name = "cbPhong";
@@ -175,6 +249,7 @@ namespace QLNHANVIEN.GUI
             // 
             // cbBang
             // 
+            this.cbBang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBang.FormattingEnabled = true;
             this.cbBang.Location = new System.Drawing.Point(98, 275);
             this.cbBang.Name = "cbBang";
@@ -390,6 +465,7 @@ namespace QLNHANVIEN.GUI
             this.dgvEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmployee.Size = new System.Drawing.Size(1142, 119);
             this.dgvEmployee.TabIndex = 3;
+            this.dgvEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployee_CellClick);
             // 
             // Column1
             // 
@@ -528,5 +604,10 @@ namespace QLNHANVIEN.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btExport;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cboSapXep;
+        private System.Windows.Forms.Label lbTim;
+        private System.Windows.Forms.TextBox tbSearch;
     }
 }

@@ -76,6 +76,7 @@ namespace QLNHANVIEN.GUI
             // 
             this.tbPassword.Location = new System.Drawing.Point(103, 128);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(164, 20);
             this.tbPassword.TabIndex = 4;
             // 
@@ -87,6 +88,7 @@ namespace QLNHANVIEN.GUI
             this.btExit.TabIndex = 6;
             this.btExit.Text = "Thoát";
             this.btExit.UseVisualStyleBackColor = true;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // btLogin
             // 

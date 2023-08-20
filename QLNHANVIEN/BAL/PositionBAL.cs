@@ -8,14 +8,13 @@ using System.Threading.Tasks;
 
 namespace QLNHANVIEN.BAL
 {
-    public class DegreeBAL
+    public class PositionBAL
     {
-        public List<DegreeBEL> ReadDegreeList()
+        PositionDAL dal = new PositionDAL();
+        public List<PositionBEL> ReadPositionList()
         {
-            DegreeDAL dal = new DegreeDAL();
-
-            List<DegreeBEL> lstBang = dal.ReadDegreeList();
-            return lstBang;
+            List<PositionBEL> lstChuc = dal.ReadPositionList();
+            return lstChuc;
         }
     }
 }

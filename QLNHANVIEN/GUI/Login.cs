@@ -47,5 +47,15 @@ namespace QLNHANVIEN.GUI
         private void Login_Load(object sender, EventArgs e)
         {
         }
+
+        private void btExit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có muốn thoát khỏi ứng dụng?", "Xác nhận",
+             MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }

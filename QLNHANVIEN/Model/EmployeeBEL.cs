@@ -30,5 +30,7 @@ namespace QLNHANVIEN.Model
         {
             get { return Phong.Tenphong; }
         }
+
+        public string SelectedImageName { get; internal set; }
     }
 }

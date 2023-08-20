@@ -39,6 +39,12 @@ namespace QLNHANVIEN.BAL
             EmployeeDAL dal = new EmployeeDAL(); // Instantiate the DAL class
             dal.EditEmployee(nv);
         }
+        public List<EmployeeBEL> Timkiem(EmployeeBEL c)
+        {
+            EmployeeDAL dal = new EmployeeDAL();
+            List<EmployeeBEL> lstNV = dal.timkiem(c);
+            return lstNV;
+        }
 
         internal EmployeeBEL GetEmployeeById(int employeeId)
         {
